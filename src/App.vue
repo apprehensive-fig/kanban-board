@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import draggable "vuedraggable";
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    draggable
+  },
+  data() {
+    return {
+      newTask: "",
+      arrBacklog: [
+        {name: "Code Sign Up Page"}
+        {name: "Test Dashboard"}
+        {name: "Style Registration"}
+        {name: "Help with Designs"}
+      ],
+      arrInProgress: [],
+      arrTested: [],
+      arrDone: []
+    }
+  },
+  methods: {
+    add() {
+      if(this.newTask) {
+        this.arrBacklog.push({name: this.newTask});
+        this.newTask= "";
+      }
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
