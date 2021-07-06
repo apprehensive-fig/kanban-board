@@ -1,6 +1,9 @@
 <template>
-  <div id="app">
-
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col form-inline">
+        <b-form-input v-model="newTask">
+    </div>
   </div>
 </template>
 
